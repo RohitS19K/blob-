@@ -1,0 +1,149 @@
+{
+  "project_name": "Hillary Step Solutions - Enterprise Landing Page",
+  "theme": "dark",
+  "aesthetic_philosophy": "Deep Obsidian Mountaineering. High-altitude authority meets extreme technical precision. The design should evoke the feeling of a high-tech expedition dossier—utilizing deep blacks, precise grid lines, and kinetic, fluid data. Extreme restraint, premium polish.",
+  "typography": {
+    "headings": {
+      "family": "Clash Display",
+      "weights": ["400", "500", "600"],
+      "usage": "H1, H2, H3. MUST use tracking-tight or tracking-tighter. No Inter or generic sans for headings.",
+      "scale": {
+        "h1": "text-5xl md:text-6xl lg:text-7xl leading-[1.1]",
+        "h2": "text-3xl md:text-4xl lg:text-5xl leading-tight",
+        "h3": "text-xl md:text-2xl leading-snug"
+      }
+    },
+    "body": {
+      "family": "Plus Jakarta Sans",
+      "weights": ["300", "400", "500"],
+      "usage": "Paragraphs, standard descriptions, form inputs.",
+      "scale": {
+        "base": "text-base md:text-lg leading-relaxed text-secondary",
+        "small": "text-sm leading-normal text-secondary/80"
+      }
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "weights": ["400"],
+      "usage": "Overlines, labels, altitude markers, basecamp coordinates, technical microcopy.",
+      "scale": {
+        "label": "text-[10px] md:text-xs uppercase tracking-[0.2em]"
+      }
+    },
+    "instruction": "Import Clash Display via Fontshare (or Google Fonts if unavailable, fallback to Space Grotesk/Outfit). Import Plus Jakarta Sans and JetBrains Mono via Google Fonts."
+  },
+  "colors": {
+    "background": {
+      "primary": "#0B0F19",
+      "secondary": "#111622",
+      "tertiary": "#161D2B"
+    },
+    "brand": {
+      "blue": "#00E5FF",
+      "green": "#00FF87",
+      "orange": "#FF6B00"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#8FA0BA",
+      "tertiary": "#5C6E8A",
+      "inverse": "#0B0F19"
+    },
+    "border": {
+      "subtle": "rgba(255, 255, 255, 0.06)",
+      "focus": "rgba(255, 255, 255, 0.15)"
+    }
+  },
+  "layouts": {
+    "spacing_system": "Generous Spacing Philosophy. Use p-8, p-12, p-16, py-32 for sections to give maximum breathing room.",
+    "grid_strategy": "The Bento Protocol (Tetris Grid). Use grid-cols-1 md:grid-cols-12 with wide gaps (gap-6 or gap-8). Break symmetry constantly. Use col-span-4, col-span-8, etc.",
+    "container": "Max-width 7xl (max-w-7xl) centered with px-4 md:px-8 for standard constraints, but allow the WebGL blob to bleed edge-to-edge."
+  },
+  "visual_enhancers": {
+    "surfaces": {
+      "cards": "Flat solid surfaces (bg-[#111622]) with 1px subtle border (border-white/5). NO muddy glassmorphism. Crisp, premium, tech-focused.",
+      "hover_glow": "On hover, transition border color and add a massive, diffuse drop-shadow (e.g. shadow-[0_0_40px_rgba(0,229,255,0.1)]) corresponding to the pillar's brand color."
+    },
+    "borders": "Expose the skeleton where appropriate. Use 1px borders to separate grid items cleanly like a technical dossier.",
+    "textures": "Apply a subtle SVG noise/grain overlay fixed over the entire background (opacity-20 mix-blend-overlay) to eliminate digital flatness."
+  },
+  "motion": {
+    "scroll": "MUST use 'lenis' (or @studio-freight/react-lenis) for premium momentum scrolling. This is critical for the Awwwards feel.",
+    "hero_reveal": "Framer Motion staggered masked line reveal. Text lines must be wrapped in overflow-hidden containers, and the inner text animates y: '100%' -> '0%' with a custom cubic-bezier(0.76, 0, 0.24, 1).",
+    "scroll_reveals": "Framer Motion whileInView. Fade up (y: 30, opacity: 0 -> 1) with staggered delays for standard content.",
+    "micro_interactions": "All buttons need scale on tap (scale: 0.98), and hover effects that shift background or text color slightly."
+  },
+  "3d_libraries": {
+    "packages": ["three", "@react-three/fiber", "@react-three/drei", "framer-motion", "@studio-freight/react-lenis", "lucide-react"],
+    "implementation_notes": "Use R3F for the Fluid Blob. A Points or InstancedMesh system with thousands of vertices moving via a custom shader (or simplified math in a useFrame hook if shaders are complex). Hovering over the canvas should pull the nodes toward the pointer (mouse interaction). Clicking should trigger an explosion/fracture of the points, returning to the organic blob over 2 seconds."
+  },
+  "image_urls": {
+    "background_textures": [
+      {
+        "url": "https://images.unsplash.com/photo-1541681142377-e350759029d0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NjZ8MHwxfHNlYXJjaHwxfHxkYXJrJTIwbW91bnRhaW4lMjBwZWFrJTIwc2lsaG91ZXR0ZXxlbnwwfHx8fDE3ODc3NzAwMzJ8MA&ixlib=rb-4.1.0&q=85",
+        "description": "silhouette of pointed mountain",
+        "usage": "Use ONLY as a very faint (opacity-5), heavily blurred (blur-3xl) background accent behind the manifesto section to ground the mountaineering theme. Do not let it interfere with text contrast."
+      }
+    ]
+  },
+  "sections_art_direction": {
+    "header": {
+      "layout": "Fixed top, z-50, crystal glassmorphism (backdrop-blur-xl bg-[#0B0F19]/60) with 1px border-b border-white/10.",
+      "content": "Brand Logo (sharp text: HILLARY STEP), minimalist nav links, 'Speak With Us' primary CTA."
+    },
+    "hero": {
+      "layout": "Min-h-screen relative flex items-center. Left column (content), Right/Absolute center (WebGL Blob Canvas).",
+      "kinetic_typography": "Main headline: 'The Ultimate Ascent. No Borders. One Platform.' Use Framer Motion staggered clip-path line reveals. Accent 'Ultimate Ascent' with an underline or subtle Electric Blue glow.",
+      "sub_headline": "Plus Jakarta Sans, text-lg, text-secondary. Delay reveal.",
+      "cta": "Glowing, pill-shaped button. bg-white text-black hover:scale-105 transition-transform, containing a glowing drop-shadow.",
+      "webgl_blob": "Absolute positioning right side or taking up 50vw. Interactive particle blob blending Blue, Green, and Orange."
+    },
+    "marquee": {
+      "layout": "py-6 border-y border-white/10 bg-[#111622]/50",
+      "style": "Editorial Marquee. Very slow, smooth drift. JetBrains Mono, text-xs uppercase. Words separated by a colored dot (Blue, Green, Orange). E.g., 'OPERATIONAL SHERPAS • CROSS-BORDER FRICTION • MACHINE INTELLIGENCE • ...'"
+    },
+    "three_pillars": {
+      "layout": "Grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto px-6 py-32.",
+      "cards": [
+        {"title": "Cognitive Digital — Platforms", "color": "#00E5FF", "desc": "Automated predictive system architecture and self-optimizing engineering environments."},
+        {"title": "Global Talent — People", "color": "#00FF87", "desc": "Semantic micro-skill alignment algorithms connecting talent to precise enterprise roles across global hubs."},
+        {"title": "Eco Smart Infra — Projects", "color": "#FF6B00", "desc": "Structural load telemetry analysis and generative environmental infrastructure project models."}
+      ],
+      "interaction": "Default state: bg-[#111622] border-white/10. Hover state: border shifts to the respective brand color, and a radial glow dropshadow appears (e.g., shadow-[#00FF87]/20). Add an abstract geometric SVG icon for each."
+    },
+    "global_staffing_module": {
+      "layout": "Numbered manifesto chapters. Asymmetric 12-column grid. py-32.",
+      "aesthetic": "Use massive outline numbers (e.g. '01', '02', '03' in JetBrains Mono, text-8xl, text-white/5) sitting behind the content.",
+      "content": "Headline: 'Every Client. Every Candidate. Every City.' Emphasize the 'Human + Machine' partnership. Break into two distinct visual blocks (Machine = stark, code-like; Human = smooth, elegant typography)."
+    },
+    "demo_form": {
+      "layout": "py-32 flex flex-col items-center. Form container max-w-lg w-full.",
+      "style": "Premium Glassmorphism or solid #111622 container. Inputs must use bg-[#0B0F19] with border-white/10. Focus state MUST highlight border in Electric Blue. 'Begin Your Ascent' submit button.",
+      "testing": "All inputs and submit button must have data-testid attributes."
+    },
+    "footer": {
+      "layout": "py-12 border-t border-white/10 text-center.",
+      "content": "Minimalist copyright, coordinate numbers (e.g., 27.9881° N, 86.9250° E for Mount Everest) in JetBrains Mono."
+    }
+  },
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You MUST use raw React JS (.jsx/.js), NOT TypeScript (.tsx) for components.",
+    "Do not apply generic `transition: all`. Target specific properties like `transition-colors`, `transition-transform`.",
+    "Do not center-align paragraphs; left-align body text for better reading flow. Headings can be centered if the layout demands it (e.g., Hero).",
+    "Never use purely transparent backgrounds on elements that float over content (e.g., navbars). Always apply a backdrop blur and a semi-transparent color (bg-[#0B0F19]/80).",
+    "Add 'aria-hidden=\"true\"' to decorative 3D canvases and SVGs.",
+    "All interactive elements MUST include a data-testid attribute (e.g., data-testid='hero-cta-button').",
+    "Ensure contrast ratio is accessible. The primary text color should be pure white (#FFF) on the #0B0F19 background.",
+    "If implementing the Three.js fluid blob is too complex with raw shaders, implement a simplified particle system using R3F <Points> and a useFrame hook that moves particles based on Math.sin/cos and mouse coordinates."
+  ],
+  "instructions_to_main_agent": {
+    "step_1": "Initialize Tailwind config with the brand colors and typography. Set up Lenis smooth scrolling in the main App wrapper.",
+    "step_2": "Build the foundational layout (Header, Footer) and the global noise overlay texture.",
+    "step_3": "Build the Framer Motion staggered line reveal component for the Kinetic Hero.",
+    "step_4": "Implement the R3F WebGL Blob Canvas. Ensure it is absolutely positioned behind or beside the hero text. Handle mouse hover attraction and click explosion logic in useFrame.",
+    "step_5": "Construct the Three Pillars Bento grid with precise hover states using Tailwind arbitrary values for shadows.",
+    "step_6": "Construct the Global Staffing module using large typography and asymmetric layout.",
+    "step_7": "Build the Contact Form using Shadcn form primitives (if available) or raw accessible HTML forms styled with Tailwind, ensuring data-testid exists.",
+    "step_8": "Test contrast and responsive layout (mobile-first)."
+  }
+}
